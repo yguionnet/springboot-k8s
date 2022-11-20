@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename package &apos;com.yguionnet.configserver&apos; to &apos;com.yguionnet.eurekaserver&apos;&#x0A;- Original project: &apos;EurekaServer&apos;&#x0A;- Original element: &apos;EurekaServer/src/main/java/com.yguionnet.configserver&apos;&#x0A;- Renamed element: &apos;EurekaServer/src/main/java/com.yguionnet.eurekaserver&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.yguionnet.configserver&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.yguionnet.configserver" name="com.yguionnet.eurekaserver" qualified="false" references="true" stamp="1667989632623" textual="false" version="1.0"/>
-</session>
