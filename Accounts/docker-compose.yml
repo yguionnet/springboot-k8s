@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+
+  accounts:
+    image: ygu26/accounts:latest
+    mem_limit: 700m
+    ports:
+      - "8080:8080"
+    networks:
+      - ygu26-network
+    
+  loans:
+    image: ygu26/loans:latest
+    mem_limit: 700m
+    ports:
+      - "8090:8090"
+    networks:
+      - ygu26-network
+    
+  cards:
+    image: ygu26/cards:latest
+    mem_limit: 700m
+    ports:
+      - "9000:9000"
+    networks:
+      - ygu26-network
+    
+networks:
+  ygu26-network:

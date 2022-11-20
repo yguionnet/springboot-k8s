@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.yguionnet.gatewayserver.filters.TraceFilter&apos; to &apos;RequestTraceFilter&apos;&#x0A;- Original project: &apos;GatewayServer&apos;&#x0A;- Original element: &apos;com.yguionnet.gatewayserver.filters.TraceFilter&apos;&#x0A;- Renamed element: &apos;com.yguionnet.gatewayserver.filters.RequestTraceFilter&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;TraceFilter&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.yguionnet.gatewayserver.filters{TraceFilter.java[TraceFilter" matchStrategy="1" name="RequestTraceFilter" qualified="false" references="true" similarDeclarations="false" stamp="1668501299013" textual="false" version="1.0"/>
+</session>
