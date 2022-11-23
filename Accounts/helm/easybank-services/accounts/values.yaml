@@ -4,7 +4,7 @@
 deploymentName: accounts-deployment
 deploymentLabel: accounts
 
-replicaCount: 1
+replicaCount: 2
 
 image:
   repository: ygu26/accounts
@@ -13,7 +13,7 @@ image:
 containerPort: 8080
 
 service:
-  type: LoadBalancer
+  type: ClusterIP
   port: 8080
   targetPort: 8080
 
