@@ -1,0 +1,35 @@
+
+gcloud auth login
+
+gcloud container clusters create cluster-1 --zone europe-west9-a --project poetic-diorama-368908
+gcloud container clusters get-credentials cluster-1 --zone europe-west9-a --project poetic-diorama-368908
+helm install <install-name> <chart>
+gcloud container clusters delete cluster-1 --zone europe-west9-a --project poetic-diorama-368908
+
+
+keycloak docker:
+docker run -p 7080:8080 -e KEYCLOAK_ADMIN=admin -e KEYCLOAK_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:20.0.1 start-dev
+
+create a client
+easybank-callcenter
+settings:
+enable client authentication
+Authentication flow:
+disable: Standard flow & Direct access grants
+enable: Service accounts roles
+
+http://localhost:7080/realms/master/.well-known/openid-configuration
+http://localhost:7080/realms/master/protocol/openid-connect/token
+
+get acceess token in postman 
+POST http://localhost:7080/realms/master/protocol/openid-connect/token
+body (x-www-form-urlencoded)
+parmas
+client_id : 
+secret_id : 
+scope: openid
+grant_type : client_credentials
+
+access-token= eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ4R1g3V192dnpVYzBmTFBhSzNPV0JVdHBNMHJmNWFpSExVaWlCQThFTVhBIn0.eyJleHAiOjE2NjkyOTQzNTksImlhdCI6MTY2OTI5NDI5OSwianRpIjoiYjI3NmY5NTMtZjlhYi00NGEyLWI0YzEtNjA1OWM1MjI3ZDIzIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo3MDgwL3JlYWxtcy9tYXN0ZXIiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMzg1OGMxODQtOGU5My00MjI1LWIzZDAtZjkyNzAwZTU0NDM5IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiZWFzeWJhbmstY2FsbGNlbnRlciIsImFjciI6IjEiLCJyZWFsbV9hY2Nlc3MiOnsicm9sZXMiOlsiZGVmYXVsdC1yb2xlcy1tYXN0ZXIiLCJvZmZsaW5lX2FjY2VzcyIsInVtYV9hdXRob3JpemF0aW9uIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsiYWNjb3VudCI6eyJyb2xlcyI6WyJtYW5hZ2UtYWNjb3VudCIsIm1hbmFnZS1hY2NvdW50LWxpbmtzIiwidmlldy1wcm9maWxlIl19fSwic2NvcGUiOiJvcGVuaWQgZW1haWwgcHJvZmlsZSIsImNsaWVudElkIjoiZWFzeWJhbmstY2FsbGNlbnRlciIsImNsaWVudEhvc3QiOiIxNzIuMTcuMC4xIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJwcmVmZXJyZWRfdXNlcm5hbWUiOiJzZXJ2aWNlLWFjY291bnQtZWFzeWJhbmstY2FsbGNlbnRlciIsImNsaWVudEFkZHJlc3MiOiIxNzIuMTcuMC4xIn0.n68PMxFhxpDRVzge_jvX2V4EPOlKXaYc_MQsKV2ZuIwWcFk5tiM0ojmQG5pH_6wbBz5h43aSgVH39r_Swmc0NpkqYkVLAmKg5A-qTJfSztPzH32g-sSiwfzwA9sx6ClbY-7-AHR86C1TMP9YjXWyYAEnyWwMMF0IedGNErsGtLhvHf2i-C5SBE6D5pY-2v26MxaeR6XzDF4C_1PO5BEA3JKx3W6ZEYxn2RwhSB9NWxm4lgyeBeCDpLQfB-OG1to27jotmcufsGh_UuRTlk8ff-qg46WH2rrmqIJHj3p6EZDrlCoYljOmOBZhZxQ81x96JrqQehDLw7WMj3MF_V4I9A
+
+for send a request add header Authorization= Bearer <access token>
